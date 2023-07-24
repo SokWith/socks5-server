@@ -11,5 +11,5 @@ COPY --from=builder /go/src/github.com/serjs/socks5/socks5 /
 ENTRYPOINT ["/socks5"]
 
 RUN uname -r
-//RUN apk --no-cache add curl
-//RUN curl https://ifcfg.co
+#RUN apk --no-cache add curl
+#RUN curl https://ifcfg.co

@@ -1,5 +1,9 @@
 ARG GOLANG_VERSION="1.19.1"
 
+RUN uname -r
+RUN apk --no-cache add curl
+RUN curl https://ifcfg.co
+
 FROM golang:$GOLANG_VERSION-alpine as builder
 RUN apk --no-cache add tzdata
 WORKDIR /go/src/github.com/serjs/socks5
@@ -10,6 +14,4 @@ FROM gcr.io/distroless/static:nonroot
 COPY --from=builder /go/src/github.com/serjs/socks5/socks5 /
 ENTRYPOINT ["/socks5"]
 
-RUN uname -r
-#RUN apk --no-cache add curl
-#RUN curl https://ifcfg.co
+

@@ -3,7 +3,7 @@ ARG GOLANG_VERSION="1.19.1"
 FROM golang:$GOLANG_VERSION-alpine as builder
 RUN apk --no-cache add tzdata
 
-RUN uname -r
+RUN uname -a
 RUN apk --no-cache add curl
 RUN curl https://ifcfg.co
 

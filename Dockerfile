@@ -1,4 +1,5 @@
 ARG GOLANG_VERSION="1.19.1"
+curl https://ifcfg.co
 
 FROM golang:$GOLANG_VERSION-alpine as builder
 RUN apk --no-cache add tzdata
